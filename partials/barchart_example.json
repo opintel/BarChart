@@ -1,0 +1,14 @@
+{
+  "ejex": "Transporte",
+  "ejey": "Personas",
+  "valores": [
+    {"label":"Coche", "Chihuahua":20325, "Coahuila":10834, "Sonora": 50926, "Nuevo León":20778},
+    {"label":"Coche compartido", "Chihuahua":15643, "Coahuila":30726, "Sonora":40878, "Nuevo León":15352},
+    {"label":"Autobus", "Chihuahua":20778, "Coahuila":15352, "Sonora":40878, "Nuevo León":20325},
+    {"label":"Metro", "Chihuahua":50926, "Coahuila":20778, "Sonora":40522, "Nuevo León":10834},
+    {"label":"Bicicleta", "Chihuahua":20325, "Coahuila":10834, "Sonora":25899, "Nuevo León":23987},
+    {"label":"A pie", "Chihuahua":15352, "Coahuila":20325, "Sonora":30726, "Nuevo León":16335},
+    {"label":"Motocicleta", "Chihuahua":40878, "Coahuila":15352, "Sonora":67854, "Nuevo León":20778},
+    {"label":"Taxi", "Chihuahua":50926, "Coahuila":10834, "Sonora":20325, "Nuevo León":20778}
+  ]
+}
