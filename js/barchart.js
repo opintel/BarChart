@@ -67,6 +67,7 @@ $.ajax({
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
+  .attr("font-family","Open sans")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
@@ -90,7 +91,6 @@ $.ajax({
   .append("text")
   .attr("x", "35%" )
   .attr("y",  50 )
-  //.attr("dy", "3em")
   .text(jsonBarchart.ejex.toUpperCase());
 
   svg.append("g")
@@ -141,7 +141,8 @@ $.ajax({
       var svgLegned4 = d3.select(".svgLegend4").append("svg")
       .attr("width", width)
       .attr("height", height)
-
+      .attr("font-family","Open sans")
+      
       var dataL = 0;
       var offset = 100;
 
