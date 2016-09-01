@@ -59,7 +59,7 @@ $.ajax({
   var yAxis = d3.svg.axis()
   .scale(y)
   .orient("left")
-  .tickFormat(d3.format(".2s"));
+  .tickFormat(d3.format("d"));
 
   var divTooltip = d3.select("#bar-chart").append("div").attr("class", "toolTip");
 
