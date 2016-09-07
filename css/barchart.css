@@ -105,5 +105,13 @@ text {
 }
 
 .svgLegend4 {
-  margin: 50px 0 0 82px;
+  margin: 82px 0 0 18%;
+}
+
+.legend {
+  position: absolute;
+  left: 13%;
+  font-family: "Open sans";
+  font-size: 11px;
+  text-transform: uppercase;
 }

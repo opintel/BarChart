@@ -13,20 +13,11 @@ $.ajax({
 });
 
 	//Escala de colores
-  var categoryDatos = [
-  "#00cc99",
-  "#ff6666",
-  "#663399",
-  "#474747",
-  "#ff9900",
-  "#0099ff",
-  "#333399",
-  "#000000",
-  "#006666",
-  "#ff6699",
-  "#666699",
-  "#999999"
-  ];
+  var categoryDatos = ["#00cc99","#ff6666","#663399","#474747","#ff9900","#0099ff","#333399","#000000","#006666","#ff6699","#666699","#999999","#1f77b4","#aec7e8","#ff7f0e","#ffbb78","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5","#8c564b","#c49c94","#e377c2","#f7b6d2","#7f7f7f","#c7c7c7","#bcbd22","#dbdb8d","#17becf","#9edae5"];
+
+  console.log(d3.scale.category20())
+
+  categoryDatos = categoryDatos;
 
   var w = 400,
   h = 400,
@@ -36,7 +27,7 @@ $.ajax({
 
   data = jsonBarchart;
 
-  var margin = {top: (parseInt(d3.select('#bar-chart').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/10)},
+  var margin = {top: (parseInt(d3.select('#bar-chart').style('height'), 10)/20), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/20), left: (parseInt(d3.select('body').style('width'), 10)/15)},
   width = parseInt(d3.select('body').style('width'), 10) - margin.left - margin.right,
   height = parseInt(d3.select('body').style('height'), 10) - margin.top - margin.bottom;
 
@@ -89,7 +80,7 @@ $.ajax({
   .attr("transform", "translate(0," + height + ")")
   .call(xAxis)
   .append("text")
-  .attr("x", "35%" )
+  .attr("x", "42%" )
   .attr("y",  50 )
   .text(jsonBarchart.ejex.toUpperCase());
 
@@ -136,47 +127,74 @@ $.ajax({
     divTooltip.style("display", "none");
   });
 
-      //////////////////// Horizontal Legend ////////////////
+  //////////////////// Horizontal Legend ////////////////
 
-      var svgLegned4 = d3.select(".svgLegend4").append("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("font-family","Open sans")
-      
-      var dataL = 0;
-      var offset = 100;
+  var svgLegned4 = d3.select(".svgLegend4").append("svg")
+  .attr("width", '100%')
+  .attr("height", '100%')
+  .attr("font-family","Open sans")
+  
+  var dataL = 0;
+  var offset = 20;
 
-      var legend4 = svgLegned4.selectAll('.legend4')
-      .data(options.slice())
-      .enter().append('g')
-      .attr("class", "legend4")
-      .attr("transform", function (d, i) {
-        if (i === 0) {
-          dataL = d.length + offset 
-          return "translate(0,0)"
-        } else { 
+  var legend4 = svgLegned4.selectAll('.legend4')
+  .data(options.slice())
+  .enter().append('g')
+  .attr("class", "legend4")
+  .style("overflow", "hidden")
+  .style("text-overflow", "ellipsis")
+  .attr("title", "20")
+  .attr("transform", function (d, i) {
+    if (i == 0) {
+      dataL = d.length + offset
+      return "translate(0,0)"
+    } else { 
+      var newdataL = dataL
+      dataL += offset + 9
+      return "translate(" + (newdataL) + ",0)"
+    }
+  })
 
-          var newdataL = dataL
-          dataL +=  d.length + offset
-          return "translate(" + (newdataL) + ",0)"
-        }
-      })
+  legend4.append('rect')
+  .attr("x", 0)
+  .attr("y", 0)
+  .attr("width", 20)
+  .attr("height", 20)
+  .attr("title", "20")
+  .style("fill", color);
 
-      legend4.append('rect')
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("width", 20)
-      .attr("height", 20)
-      .style("fill", color);
+  legend4.on("mousemove", function(d){
+    divTooltip.style("left", d3.event.pageX-55+"px");
+    divTooltip.style("top", d3.event.pageY-90+"px");
+    divTooltip.style("display", "inline-block");
+    var x = d3.event.pageX, y = d3.event.pageY
+    var elements = document.querySelectorAll(':hover');
+    l = elements.length
+    l = l-1
+    elementData = elements[l].__data__
+    divTooltip.html("<span class='title-pop'>"+d+"</span>");
+  });
 
-      legend4.append('text')
-      .attr("x", 25)
-      .attr("y", 15)
-      //.attr("dy", ".35em")
-      .text(function(d) { return d; })
-      .attr("class", "textselected")
-      .style("text-anchor", "start")
-      .style("font-size", 15)
+  legend4.on("mouseout", function(d){
+    divTooltip.style("display", "none");
+  });
+
+  $('.legend4').append('<span class="legend">Leyenda</span>');
+
+  /*legend4.append('text')
+  .attr("x", 25)
+  .attr("y", 15)
+  .attr("width", 2)
+  //.attr("dy", ".35em")
+  .text(function(d) { return d; })
+  .attr("class", "textselected")
+  .style("margin-right", 100)
+  .style("font-size", 15)
+  .style("overflow", "hidden")
+  .style("text-overflow", "ellipsis")
+  .attr("title", "20")*/
+
+
 
   // Validacion de BarChart
   function validaJsonBarChart(json_barchart){
