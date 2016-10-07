@@ -1,4 +1,4 @@
-# BarChart
+# BarChart Responsive
 
 Plantilla de visualización tipo Bar chart.<br>
 Descripción de archivos principales:
