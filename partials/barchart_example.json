@@ -5,6 +5,7 @@
     {
       "key": "Chihuahua",
       "values": [
+<<<<<<< HEAD
         {"x": "Coche", "y": -3565},
         {"x": "Coche compartido", "y": 18546},
         {"x": "Metro", "y": 0},
@@ -12,18 +13,36 @@
         {"x": "A pie", "y": 12654},
         {"x": "Motocicleta", "y": 12654},
         {"x": "Taxi", "y": -2654}
+=======
+        {"x": "Coche", "y": 35650},
+        {"x": "Coche compartido", "y": 18546},
+        {"x": "Metro", "y": 12654},
+        {"x": "Bicicleta", "y": 12654},
+        {"x": "A pie", "y": 12654},
+        {"x": "Motocicleta", "y": 12654},
+        {"x": "Taxi", "y": 12654}
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
       ]
     },
     {
       "key": "Coahuila",
       "values": [
+<<<<<<< HEAD
         {"x": "Coche", "y": -3069},
         {"x": "Coche compartido", "y": -2648},
+=======
+        {"x": "Coche", "y": 30569},
+        {"x": "Coche compartido", "y": 26548},
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
         {"x": "Metro", "y": 19456},
         {"x": "Bicicleta", "y": 19456},
         {"x": "A pie", "y": 19456},
         {"x": "Motocicleta", "y": 19456},
+<<<<<<< HEAD
         {"x": "Taxi", "y": -1956}
+=======
+        {"x": "Taxi", "y": 19456}
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
       ]
     },
     {
@@ -31,8 +50,13 @@
       "values": [
         {"x": "Coche", "y": 26748},
         {"x": "Coche compartido", "y": 20158},
+<<<<<<< HEAD
         {"x": "Metro", "y": -16432},
         {"x": "Bicicleta", "y": -16432},
+=======
+        {"x": "Metro", "y": 16432},
+        {"x": "Bicicleta", "y": 16432},
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
         {"x": "A pie", "y": 16432},
         {"x": "Motocicleta", "y": 16432},
         {"x": "Taxi", "y": 16432}
@@ -43,9 +67,15 @@
       "values": [
         {"x": "Coche", "y": 18546},
         {"x": "Coche compartido", "y": 10325},
+<<<<<<< HEAD
         {"x": "Metro", "y": -9521},
         {"x": "Bicicleta", "y": -9521},
         {"x": "A pie", "y": -9521},
+=======
+        {"x": "Metro", "y": 9521},
+        {"x": "Bicicleta", "y": 9521},
+        {"x": "A pie", "y": 9521},
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
         {"x": "Motocicleta", "y": 9521},
         {"x": "Taxi", "y": 9521}
       ]
@@ -53,23 +83,40 @@
     {
       "key": "Aguascalientes",
       "values": [
+<<<<<<< HEAD
         {"x": "Coche", "y": -8365},
+=======
+        {"x": "Coche", "y": 8365},
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
         {"x": "Coche compartido", "y": 29321},
         {"x": "Metro", "y": 11211},
         {"x": "Bicicleta", "y": 11211},
         {"x": "A pie", "y": 11211},
+<<<<<<< HEAD
         {"x": "Motocicleta", "y": -11211},
         {"x": "Taxi", "y": -11211}
+=======
+        {"x": "Motocicleta", "y": 11211},
+        {"x": "Taxi", "y": 11211}
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
       ]
     },
     {
       "key": "Baja California",
       "values": [
+<<<<<<< HEAD
         {"x": "Coche", "y": -10522},
         {"x": "Coche compartido", "y": -14789},
         {"x": "Metro", "y": 15155},
         {"x": "Bicicleta", "y": 15155},
         {"x": "A pie", "y": -15155},
+=======
+        {"x": "Coche", "y": 10522},
+        {"x": "Coche compartido", "y": 14789},
+        {"x": "Metro", "y": 15155},
+        {"x": "Bicicleta", "y": 15155},
+        {"x": "A pie", "y": 15155},
+>>>>>>> e6e2a93b9b95f3333e0b65715c9e097e1a498fd0
         {"x": "Motocicleta", "y": 15155},
         {"x": "Taxi", "y": 15155}
       ]
