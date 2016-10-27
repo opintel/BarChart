@@ -6,14 +6,12 @@ $.ajax({
   url: "partials/barchart_example.json",
   async: false,
   success: function(data){
-    jsonBarchart = data;
-    /*if (validaJsonBarChart(data) ){
+    if (validaJsonBarChart(data) ){
       jsonBarchart = data;
-    }*/
+    }
   }
 });
 
-	//Escala de colores
   var categoryDatos = ["#00cc99","#ff6666","#663399","#474747","#ff9900","#0099ff","#333399","#000000","#006666","#ff6699","#666699","#999999","#1f77b4","#aec7e8","#ff7f0e","#ffbb78","#2ca02c","#98df8a","#d62728","#ff9896","#9467bd","#c5b0d5","#8c564b","#c49c94","#e377c2","#f7b6d2","#7f7f7f","#c7c7c7","#bcbd22","#dbdb8d","#17becf","#9edae5"];
 
   d3.scale.categoryDatos = function() {
@@ -36,11 +34,11 @@ $.ajax({
 nv.addGraph(function() {
   var chart = nv.models.multiBarChart()
       .transitionDuration(350)
-      .reduceXTicks(false)   //If 'false', every single x-axis tick label will be rendered.
-      .rotateLabels(0)      //Angle to rotate x-axis labels.
-      .showControls(false)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
+      .reduceXTicks(false)
+      .rotateLabels(0)
+      .showControls(false)
       .showLegend(false)   
-      .groupSpacing(0.1)    //Distance between each group of bars.
+      .groupSpacing(0.1)
       .color(d3.scale.categoryDatos().range())
       .tooltipContent( function(key, x, y){ 
         if (parseInt(y) >= 0) {
@@ -124,35 +122,21 @@ legend4.on("mouseout", function(d){
 $('.legend4').append('<span class="legend">Leyenda</span>');
 
   // Validacion de BarChart
-  function validaJsonBarChart(json_barchart){
-      var valores = json_barchart["valores"];
+  function validaJsonBarChart(jsonBarchart){
+
+      var valores = jsonBarchart["valores"];
 
       for(index_valor in valores){
           var llaves_elemento = Object.keys(valores[index_valor]);
-          if(!llaves_elemento.some(elem => elem === 'label')){
-              alert("Error en la estructura del JSON: El campo label es requerido dentro de los valores. Elemento: " + (parseInt(index_valor) + 1).toString());
+          if(!llaves_elemento.some(elem => elem === 'key')){
+              alert("Error en la estructura del JSON: El campo key es requerido dentro de los valores. Elemento: " + (parseInt(index_valor) + 1).toString());
               return false;
-          }
-
-          if(!json_barchart['ejex']){
-            alert("Error en la estructura del JSON: Se necesita especificar la leyenda para el eje x");
-            return false;
-          }
-
-          if(!json_barchart['ejey']){
-            alert("Error en la estructura del JSON: Se necesita especificar la leyenda para el eje y");
-            return false;
           }
 
           for(index_llave in llaves_elemento){
               if(llaves_elemento[index_llave] === 'label'){
                   if(typeof llaves_elemento[index_llave] !== 'string'){
                       alert("Error en la estructura del JSON: El campo label debe ser una cadena");
-                      return false;
-                  }
-              }else{
-                  if(typeof valores[index_valor][llaves_elemento[index_llave]] !== 'number'){
-                      alert("Error en la estructura del JSON: El campo " + llaves_elemento[index_llave] + " debe ser un numero");
                       return false;
                   }
               }
